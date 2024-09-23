@@ -1,7 +1,6 @@
-package co.com.bancolombia.practica2;
+package co.com.bancolombia.entregableuno.practica2;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Cliente implements ServicioCuentas{
     private int numero;

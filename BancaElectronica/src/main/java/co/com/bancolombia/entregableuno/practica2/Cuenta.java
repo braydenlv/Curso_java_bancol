@@ -1,4 +1,4 @@
-package co.com.bancolombia.practica1;
+package co.com.bancolombia.entregableuno.practica2;
 
 public abstract class Cuenta {
     private int numero;

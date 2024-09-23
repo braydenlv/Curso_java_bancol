@@ -1,6 +1,4 @@
-package co.com.bancolombia.practica2;
-
-import java.util.ArrayList;
+package co.com.bancolombia.entregableuno.practica2;
 
 public class Main {
     public static void main(String[] args) {

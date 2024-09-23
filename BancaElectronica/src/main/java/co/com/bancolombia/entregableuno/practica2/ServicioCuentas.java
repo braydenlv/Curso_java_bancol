@@ -1,4 +1,4 @@
-package co.com.bancolombia.practica2;
+package co.com.bancolombia.entregableuno.practica2;
 
 import java.util.ArrayList;
 

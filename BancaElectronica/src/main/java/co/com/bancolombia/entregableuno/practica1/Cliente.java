@@ -1,19 +1,31 @@
-package co.com.bancolombia.practica1;
+package co.com.bancolombia.entregableuno.practica1;
 
 import java.util.ArrayList;
 
-public class Banco {
+public class Cliente {
+    private int numero;
     private String nombre;
     private Domicilio domicilio;
     private String rfc;
     private String telefono;
-    private ArrayList<Cliente> clientes;
+    private ArrayList<Cuenta> cuentas;
+    private String fechaNacimiento;
 
-    public Banco(String nombre, Domicilio domicilio, String rfc, String telefono) {
+    public Cliente(int numero, String nombre, Domicilio domicilio, String rfc, String telefono, String fechaNacimiento) {
+        this.numero = numero;
         this.nombre = nombre;
         this.domicilio = domicilio;
         this.rfc = rfc;
         this.telefono = telefono;
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
 
     public String getNombre() {
@@ -48,22 +60,32 @@ public class Banco {
         this.telefono = telefono;
     }
 
-    public ArrayList<Cliente> getClientes() {
-        return clientes;
+    public ArrayList<Cuenta> getCuentas() {
+        return cuentas;
     }
 
-    public void setClientes(ArrayList<Cliente> clientes) {
-        this.clientes = clientes;
+    public void setCuentas(ArrayList<Cuenta> cuentas) {
+        this.cuentas = cuentas;
+    }
+
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(String fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
 
     @Override
     public String toString() {
-        return "Banco{" +
-                "nombre='" + nombre + '\'' +
+        return "Cliente{" +
+                "numero=" + numero +
+                ", nombre='" + nombre + '\'' +
                 ", domicilio=" + domicilio +
                 ", rfc='" + rfc + '\'' +
                 ", telefono='" + telefono + '\'' +
-                ", clientes=" + clientes +
+                ", cuentas=" + cuentas +
+                ", fechaNacimiento='" + fechaNacimiento + '\'' +
                 '}' + "\n";
     }
 }
