@@ -1,6 +1,8 @@
 package co.com.bancol.ejerciciosfor;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class PilaDeEjerciciosFor {
 
@@ -60,7 +62,7 @@ public class PilaDeEjerciciosFor {
 
     //    Ejercicio 6:
 //    Imprime los números del 1 al 10 y su doble:
-//    Escribe un programa que utilice un bucle for para imprimir los números del 1 al 10 junto con su doble (por ejemplo: ""1 - 2"", ""2 - 4"", ...).
+//    Escribe un programa que utilice un bucle for para imprimir los números del 1 al 10 junto con su doble (por ejemplo:""1 - 2"", ""2 - 4"", ...).
     public static void ejercicioSeis() {
         System.out.println("EJERCICIO 6: Imprime los números del 1 al 10 y su doble.");
         for (int i = 1; i <= 10; i++) {
@@ -239,7 +241,7 @@ public class PilaDeEjerciciosFor {
         System.out.println("EJERCICIO 16: Imprime los primeros 10 números Fibonacci.");
         int numeroAuxiliarUno = 0;
         int numeroAuxiliarDos = 1;
-        int sumatoria = 0;
+        int sumatoria;
         for (int i = 1; i <= 10; i++) {
             sumatoria = numeroAuxiliarUno + numeroAuxiliarDos;
             numeroAuxiliarUno = numeroAuxiliarDos;
@@ -285,5 +287,397 @@ public class PilaDeEjerciciosFor {
         System.out.print("\n");
     }
 
+    //    Ejercicio 19
+//  Crea un patrón de pirámide con asteriscos:
+//  Escribe un programa que utilice un bucle for para crear una pirámide de asteriscos como la siguiente:
+//  *
+//  **
+//  ***
+//  ****
+//  *****
+    public static void ejercicioDiecinueve(int tamanioDeLaPiramide){
+        System.out.println("EJERCICIO 19: Crea un patrón de pirámide con asteriscos.");
+        for (int i = 0; i < tamanioDeLaPiramide; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.print("\n");
+        }
+    }
+
+    //    Ejercicio 20
+//  Verifica si un array contiene un número específico:
+//  Escribe un programa que utilice un bucle for para verificar si un array contiene un número específico. Si el número está presente, imprime "Encontrado"; de lo contrario, imprime "No encontrado".
+    public static void ejercicioVeinte(int numeroABuscar) {
+        System.out.println("EJERCICIO 20: Verifica si un array contiene un número específico.");
+        ArrayList<Integer> listaDeElementos = new ArrayList<>();
+        listaDeElementos.add(1);
+        listaDeElementos.add(12);
+        listaDeElementos.add(123);
+        listaDeElementos.add(23);
+        listaDeElementos.add(32);
+        listaDeElementos.add(321);
+        listaDeElementos.add(13);
+        listaDeElementos.add(21);
+
+        boolean numeroEncontrado = false;
+
+        for (int listaDeElemento : listaDeElementos) {
+            if (listaDeElemento == numeroABuscar) {
+                numeroEncontrado = true;
+                break;
+            }
+        }
+
+        if (numeroEncontrado){
+            System.out.println("Encontrado");
+        } else {
+            System.out.println("No encontrado");
+        }
+    }
+
+    //    Ejercicio 21
+//  Imprime los elementos en posiciones impares de un array:
+//  Escribe un programa que utilice un bucle for para imprimir los elementos que están en posiciones impares de un array.
+    public static void ejercicioVeintiuno(int... listaDeNumeros) {
+        System.out.println("EJERCICIO 21: Imprime los elementos en posiciones impares de un array.");
+        ArrayList<Integer> listaDeElementos = new ArrayList<>();
+        for (Integer numero : listaDeNumeros) {
+            listaDeElementos.add(numero);
+        }
+
+        for (int i = 0; i < listaDeElementos.size(); i++) {
+            if (i % 2 != 0) {
+                System.out.printf("Elemento %d= %d \n", i, listaDeElementos.get(i));
+            }
+        }
+    }
+
+    //    Ejercicio 22
+//  Calcula el promedio de un array de números:
+//  Escribe un programa que utilice un bucle for para calcular el promedio de todos los números en un array.
+    public static void ejercicioVeintidos(int... numerosAPromediar) {
+        System.out.println("EJERCICIO 22: Calcula el promedio de un array de números.");
+        int sumatoria = 0;
+
+        for (Integer numero : numerosAPromediar) {
+            sumatoria += numero;
+        }
+        System.out.printf("Promedio = %d \n", (sumatoria / numerosAPromediar.length));
+
+    }
+
+    //    Ejercicio 23
+//  Cuenta cuántos elementos en un array son strings.
+//  Escribe un programa que utilice un bucle for para contar cuántos elementos en un array son de tipo string.
+    public static void ejercicioVeintitres(Object... objetos){
+        System.out.println("EJERCICIO 23: Cuenta cuántos elementos en un array son strings.");
+        int conteoDeStrings = 0;
+
+        for (Object objeto : objetos) {
+            if (objeto instanceof String) {
+                conteoDeStrings++;
+            }
+        }
+        System.out.printf("Hay un total de %d strings en el arreglo.", conteoDeStrings);
+    }
+
+
+    //    Ejercicio 24
+//  Concatena todos los elementos de un array en un solo string:
+//  Escribe un programa que utilice un bucle for para concatenar todos los elementos de un array en un solo string, separado por comas.
+    public static void ejercicioVenticuatro(String... listaDeStrings){
+        System.out.println("EJERCICIO 24: Concatena todos los elementos de un array en un solo string.");
+        for (int i = 0; i < listaDeStrings.length; i++) {
+            System.out.printf("%s",listaDeStrings[i]);
+            if (i < listaDeStrings.length-1){
+                System.out.print(",");
+            }
+        }
+        System.out.print("\n");
+    }
+
+    //    Ejercicio 25
+//  Crea un patrón de pirámide invertida con asteriscos:
+//  Escribe un programa que utilice un bucle for para crear una pirámide invertida de asteriscos como la siguiente:
+//  *****
+//  ****
+//  ***
+//  **
+//  *
+    public static void ejercicioVenticinco(int tamanioDeLaPiramide){
+        System.out.println("EJERCICIO 25: Crea un patrón de pirámide invertida con asteriscos.");
+        for (int i = tamanioDeLaPiramide; i > 0; i--) {
+            for (int j = i; j > 0; j--) {
+                System.out.print("*");
+            }
+            System.out.print("\n");
+        }
+    }
+
+    //    Ejercicio 26
+//  Convierte un array de strings a un array de números:
+//  Escribe un programa que utilice un bucle for para convertir un array de strings que representan números (por ejemplo, ["1", "2", "3"]) en un array de números (por ejemplo, [1, 2, 3]).
+    public static void ejercicioVeintiseis(String... listaDeNumerosEnTexto){
+        System.out.println("EJERCICIO 26: Convierte un array de strings a un array de números.");
+        List<Integer> listaDeNumeros = new ArrayList<>();
+        for (String numeroEnTexto : listaDeNumerosEnTexto) {
+            listaDeNumeros.add(Integer.parseInt(numeroEnTexto));
+        }
+        System.out.println(listaDeNumeros);
+    }
+
+    //    Ejercicio 27
+//  Filtra los números mayores a 50 en un array:
+//  Escribe un programa que utilice un bucle for para filtrar todos los números mayores a 50 de un array y los almacene en un nuevo array.   Escribe un programa que utilice un bucle for para recorrer un array de strings y convertir cada elemento a mayúsculas.
+    public static void ejercicioVeintisiete(Integer... listaDeNumerosAFiltrar){
+        System.out.println("EJERCICIO 27: Convierte un array de strings a un array de números.");
+        System.out.println("Lista de números a filtrar: " + Arrays.toString(listaDeNumerosAFiltrar));
+        List<Integer> listaDeNumerosFiltrados = new ArrayList<>();
+        for (Integer numeroAFiltrar : listaDeNumerosAFiltrar) {
+            if (numeroAFiltrar > 50) {
+                listaDeNumerosFiltrados.add(numeroAFiltrar);
+            }
+        }
+        System.out.println("Numeros filtrados: " + listaDeNumerosFiltrados);
+    }
+
+    //    Ejercicio 28
+//  Ordena un array de números de menor a mayor:
+//  Escribe un programa que utilice un bucle for (sin utilizar métodos de ordenación integrados) para ordenar un array de números de menor a mayor.
+    public static void ejercicioVeintiocho(Integer... listaDeNumerosAOrdenar){
+        System.out.println("EJERCICIO 28: Ordena un array de números de menor a mayor.");
+        System.out.println("Lista de números a ordenar: " + Arrays.toString(listaDeNumerosAOrdenar));
+        for (int i = 0; i < listaDeNumerosAOrdenar.length - 1; i++) {
+            for (int j = 0; j < listaDeNumerosAOrdenar.length - 1 - i; j++) {
+                if (listaDeNumerosAOrdenar[j] > listaDeNumerosAOrdenar[j + 1]) {
+                    int numeroAuxiliar = listaDeNumerosAOrdenar[j];
+                    listaDeNumerosAOrdenar[j] = listaDeNumerosAOrdenar[j + 1];
+                    listaDeNumerosAOrdenar[j + 1] = numeroAuxiliar;
+                }
+            }
+        }
+        System.out.println("Lista de números ordenados: " + Arrays.toString(listaDeNumerosAOrdenar));
+    }
+
+    //    Ejercicio 29
+//  Imprime la matriz transpuesta de una matriz 2D:
+//  Escribe un programa que utilice un bucle for para imprimir la matriz transpuesta de una matriz 2D (array de arrays).
+//  Matriz 2D de entrada
+//  let matriz =
+//  [1, 2, 3],
+//  [4, 5, 6],
+//  [7, 8, 9]
+//  Matriz Transpuesta =
+//  [1, 4, 7],
+//  [2, 5, 8],
+//  [3, 6, 9]
+
+    public static void ejercicioVeintinueve(int[][] matriz){
+        System.out.println("EJERCICIO 29: Imprime la matriz transpuesta de una matriz 2D.");
+        System.out.println("Matriz original:");
+        for (int i = 0; i < matriz.length; i++) {
+            System.out.print("[ ");
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println("]");
+        }
+
+        System.out.println("Matriz transpuesta:");
+        for (int i = 0; i < matriz[0].length; i++) {
+            System.out.print("[ ");
+            for (int j = 0; j < matriz.length; j++) {
+                System.out.print(matriz[j][i] + " ");
+            }
+            System.out.println("]");
+        }
+    }
+
+    //    Ejercicio 30
+//  Verifica si un array es palíndromo:
+//  Escribe un programa que utilice un bucle for para verificar si un array de números o letras es un palíndromo (se lee igual de izquierda a derecha que de derecha a izquierda).
+    public static void ejercicioTreinta(char[] palabraPalindroma){
+        System.out.println("EJERCICIO 30: Verifica si un array es palíndromo.");
+        int longitud = palabraPalindroma.length;
+
+        for (int i = 0; i < longitud / 2; i++) {
+            if (palabraPalindroma[i] != palabraPalindroma[longitud - 1 - i]) {
+                System.out.println(Arrays.toString(palabraPalindroma) + " no es palindroma.");
+            }
+        }
+        System.out.println(Arrays.toString(palabraPalindroma) + " es palindroma.");
+    }
+
+    //    Ejercicio 31
+//  Encuentra el segundo número más grande en un array:
+//  Escribe un programa que utilice un bucle para encontrar el segundo número más grande en un array de números.
+
+    public static void ejercicioTreintaYUno(Integer... listaDeNumeros){
+        System.out.println("EJERCICIO 31: Encuentra el segundo número más grande en un array.");
+        System.out.println("Lista de numeros a evaluar: " + Arrays.toString(listaDeNumeros));
+        int mayor = 0;
+        int segundoMayor = 0;
+        for (int i = 0; i < listaDeNumeros.length; i++) {
+            if (listaDeNumeros[i] > mayor) {
+                segundoMayor = mayor;
+                mayor = listaDeNumeros[i];
+            } else if (listaDeNumeros[i] > segundoMayor && listaDeNumeros[i] != mayor) {
+                segundoMayor = listaDeNumeros[i];
+            }
+        }
+        System.out.printf("El segundo número mayor es %d. \n", segundoMayor);
+    }
+
+    //    Ejercicio 32
+//  Imprime los factores de un número dado:
+//  Escribe un programa que utilice un bucle for para imprimir todos los factores de un número dado.
+    public static void ejercicioTreintaYDos(int numeroFactorizar){
+        System.out.println("EJERCICIO 32: Imprime los factores de un número dado.");
+        System.out.println("Los factores de " + numeroFactorizar + " son:");
+
+        for (int i = 1; i <= numeroFactorizar; i++) {
+            if (numeroFactorizar % i == 0) {
+                System.out.println("* " + i);
+            }
+        }
+    }
+
+    //    Ejercicio 33
+//  Calcula el factorial de un número:
+//  Escribe un programa que utilice un bucle for para calcular el factorial de un número dado.
+    public static void ejercicioTreintaYTres(int factorialDelNumero){
+        System.out.println("EJERCICIO 33: Calcula el factorial de un número.");
+        int resultadoFactorial = 1;
+        for (int i = 1; i <= factorialDelNumero; i++) {
+            resultadoFactorial = resultadoFactorial * i;
+        }
+        System.out.println("El factorial de " + factorialDelNumero + " es: " + resultadoFactorial);
+
+    }
+
+    //    Ejercicio 34
+//  Crea un patrón de triángulo de números:
+//  Escribe un programa que utilice un bucle for para crear un triángulo de números como el siguiente:
+//  1
+//  22
+//  333
+//  4444
+//  55555
+    public static void ejercicioTreintaYCuatro(int tamanioDelTriangulo){
+        System.out.println("EJERCICIO 34: Crea un patrón de triángulo de números.");
+        for (int i = 0; i < tamanioDelTriangulo; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print(i+1);
+            }
+            System.out.printf("\n");
+        }
+    }
+
+    //    Ejercicio 35
+//  Crea un array con los números primos del 1 al 100:
+//  Escribe un programa que utilice un bucle for para encontrar y almacenar todos los números primos entre 1 y 100 en un array.
+    public static void ejercicioTreintaYCinco(){
+        System.out.println("EJERCICIO 35: Crea un array con los números primos del 1 al 100.");
+        List<Integer> numerosPrimos = new ArrayList<>();
+        for (int i = 1; i <= 100; i++) {
+            int conteoFactores = 0;
+            for (int j = 1; j <= i; j++) {
+                if (i % j == 0) {
+                    conteoFactores++;
+                }
+            }
+            if (conteoFactores == 2){
+                numerosPrimos.add(i);
+            }
+        }
+        System.out.println(numerosPrimos);
+    }
+
+    //    Ejercicio 36
+//  Imprime los primeros 10 números perfectos:
+//  Escribe un programa que utilice un bucle for para imprimir los primeros 10 números perfectos (números que son iguales a la suma de sus divisores propios).
+   public static void ejercicioTreintaYSeis(){
+       System.out.println("EJERCICIO 36: Imprime los primeros 10 números perfectos.");
+       List<Integer> numerosPerfectos = new ArrayList<>();
+       int numeroFactorizar = 1;
+       int cantidadNumerosAEncontrar = 3;
+       do {
+           int sumaDeDivisores = 0;
+           for (int i = 1; i < numeroFactorizar; i++) {
+               if (numeroFactorizar % i == 0) {
+                   sumaDeDivisores += i;
+               }
+           }
+           if (sumaDeDivisores == numeroFactorizar){
+               numerosPerfectos.add(numeroFactorizar);
+           }
+           numeroFactorizar++;
+       }while (numerosPerfectos.size() < cantidadNumerosAEncontrar);
+
+       System.out.println("Los primeros " + cantidadNumerosAEncontrar + " números perfectos son: " + numerosPerfectos);
+   }
+
+    //    Ejercicio 37
+//  Suma de matrices 2D:
+//  Escribe un programa que utilice bucles for anidados para sumar dos matrices 2D del mismo tamaño.
+    public static void ejercicioTreintaYSiete(int[][] matrizUno, int[][] matrizDos){
+        System.out.println("EJERCICIO 37: Suma de matrices 2D.");
+        if (matrizUno.length != matrizDos.length){
+            throw new RuntimeException("Las matrices tienen tañanos diferentes");
+        }
+        int[][] matrizResultado = new int[matrizUno.length][matrizDos.length];
+        for (int i = 0; i < matrizUno.length; i++) {
+            for (int j = 0; j < matrizUno.length; j++) {
+                matrizResultado[i][j] = matrizUno[i][j] + matrizDos[i][j];
+            }
+        }
+
+        System.out.println(Arrays.deepToString(matrizResultado));
+    }
+
+    //    Ejercicio 38
+//  Multiplicación de matrices 2D:
+//  Escribe un programa que utilice bucles for anidados para multiplicar dos matrices 2D
+        public static void ejercicioTreintaYOcho(int[][] matrizUno, int[][] matrizDos){
+        System.out.println("EJERCICIO 38: Multiplicación de matrices 2D.");
+        if (matrizUno.length != matrizDos.length){
+            throw new RuntimeException("Las matrices tienen tamaños diferentes");
+        }
+        int tamanioMatriz = matrizUno.length;
+        int[][] matrizResultado = new int[tamanioMatriz][tamanioMatriz];
+
+            for (int i = 0; i < tamanioMatriz; i++) {
+                for (int j = 0; j < tamanioMatriz; j++) {
+                    for (int k = 0; k < tamanioMatriz; k++) {
+                        matrizResultado[i][j] += matrizUno[i][k] * matrizDos[k][j];
+                    }
+                }
+            }
+            System.out.println(Arrays.deepToString(matrizResultado));
+    }
+
+    //    Ejercicio 39
+//  Crea un patrón de triángulo de números:
+//  Escribe un programa que utilice un bucle for para crear un triángulo de números como el siguiente:
+//  1
+//  12
+//  333
+//  1234
+//  55555
+    public static void ejercicioTreintaYNueve(int tamanioDelTriangulo){
+        System.out.println("EJERCICIO 34: Crea un patrón de triángulo de números.");
+        for (int i = 0; i < tamanioDelTriangulo; i++) {
+            for (int j = 0; j <= i; j++) {
+                if(i%2 != 0){
+                    System.out.print(j+1);
+                }else {
+                    System.out.print(i+1);
+                }
+
+            }
+            System.out.printf("\n");
+        }
+    }
 
 }
