@@ -55,6 +55,6 @@ public abstract class Cuenta implements Comparable<Cuenta>{
 
     @Override
     public int compareTo(Cuenta cuenta) {
-        return Integer.compare(this.numero, cuenta.getNumero());
+        return Double.compare(this.saldo, cuenta.getSaldo());
     }
 }
