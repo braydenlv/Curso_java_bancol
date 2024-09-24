@@ -1,4 +1,4 @@
-package co.com.bancolombia.entregableuno.practica2;
+package co.com.bancolombia.entregable1.practica2;
 
 public class CuentaDeCheque extends Cuenta {
 

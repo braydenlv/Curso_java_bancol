@@ -1,6 +1,6 @@
-package co.com.bancolombia.entregableuno.practica1;
+package co.com.bancolombia.entregable1.practica3;
 
-public class CuentaDeCheque extends Cuenta{
+public class CuentaDeCheque extends Cuenta {
 
     private double costoManejoMensual;
     public CuentaDeCheque(int numero, double saldo, double costoManejoMensual) {
@@ -18,7 +18,7 @@ public class CuentaDeCheque extends Cuenta{
 
     @Override
     public String toString() {
-        return "CuentaDeCheque{" +
+        return  "CuentaDeCheque{" + super.toString() +
                 "costoManejoMensual=" + costoManejoMensual +
                 '}';
     }

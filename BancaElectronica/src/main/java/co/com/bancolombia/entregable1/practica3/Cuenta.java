@@ -1,6 +1,6 @@
-package co.com.bancolombia.entregableuno.practica1;
+package co.com.bancolombia.entregable1.practica3;
 
-public abstract class Cuenta {
+public abstract class Cuenta implements Comparable<Cuenta>{
     private int numero;
     private String fechaApertura;
     private double saldo;
@@ -51,5 +51,10 @@ public abstract class Cuenta {
                 ", saldo=" + saldo +
                 ", fechaCancelacion='" + fechaCancelacion + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Cuenta cuenta) {
+        return Integer.compare(this.numero, cuenta.getNumero());
     }
 }

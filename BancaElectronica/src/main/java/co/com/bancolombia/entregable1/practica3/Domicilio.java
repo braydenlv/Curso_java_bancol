@@ -1,4 +1,4 @@
-package co.com.bancolombia.entregableuno.practica1;
+package co.com.bancolombia.entregable1.practica3;
 
 public class Domicilio {
     private String calle;

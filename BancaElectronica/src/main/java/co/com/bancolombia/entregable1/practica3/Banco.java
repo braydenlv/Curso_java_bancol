@@ -1,8 +1,8 @@
-package co.com.bancolombia.entregableuno.practica2;
+package co.com.bancolombia.entregable1.practica3;
 
 import java.util.ArrayList;
 
-public class Banco implements ServicioClientes{
+public class Banco implements ServicioClientes {
     private String nombre;
     private Domicilio domicilio;
     private String rfc;

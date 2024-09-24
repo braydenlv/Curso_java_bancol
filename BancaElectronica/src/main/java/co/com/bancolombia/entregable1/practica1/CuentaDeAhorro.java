@@ -1,6 +1,6 @@
-package co.com.bancolombia.entregableuno.practica2;
+package co.com.bancolombia.entregable1.practica1;
 
-public class CuentaDeAhorro extends Cuenta {
+public class CuentaDeAhorro extends Cuenta{
     private double tasaInteresMensual;
 
     public CuentaDeAhorro(int numero, double saldo, double tasaInteresMensual) {
@@ -22,7 +22,7 @@ public class CuentaDeAhorro extends Cuenta {
 
     @Override
     public String toString() {
-        return  "CuentaDeAhorro{" + super.toString() +
+        return "CuentaDeAhorro{" +
                 "tasaInteresMensual=" + tasaInteresMensual +
                 '}';
     }
